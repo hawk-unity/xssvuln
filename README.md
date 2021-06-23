@@ -1,7 +1,7 @@
 # xssvuln
-<h1>Discovering an XSS vulnerability</h1>
-<h1>XSS açığı keşfetme</h1>
-<h2>Ghost Kurts için lazım olcak :D </h2>
+<font>Discovering an XSS vulnerability</font>
+<font>XSS açığı keşfetme</font><br>
+<font size="7">Ghost Kurts için lazım olcak :D </font></br>
 <pre><code> 
 pip install requests 
 python3 xssvuln.py </pre></code>
